@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: ghcr.io/zabbix-community/zabbix-server-create-upgrade-db
+  IMAGE_NAME: ghcr.io/jonathanlin/zabbix-server-create-upgrade-db
 
 jobs:
   set-timestamp:
@@ -29,7 +29,7 @@ jobs:
       BUILD_TIMESTAMP: ${{ needs.set-timestamp.outputs.build-timestamp }}
     strategy:
       matrix:
-        major_version: ["6.0", "6.4", "7.0", "7.2", "7.4"]
+        major_version: ["6.0", "6.4", "7.0", "7.2", "7.4", "8.0"]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
